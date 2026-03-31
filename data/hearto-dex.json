@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "title": "HeartoDex",
+    "description": "Indexation de la faune et des entités de Heartopia avec filtres combinables.",
+    "categories": {
+      "schedules": ["Matin", "Après-midi", "Soir", "Nuit"],
+      "weather": ["Soleil", "Pluie", "Arc-en-ciel"],
+      "locations": [
+        "Banlieue",
+        "Tour faon",
+        "Tremplin",
+        "Ruines",
+        "Forêt chêne spirituel",
+        "Mer de l'Est",
+        "Village de pêcheur",
+        "Tour Faon",
+        "Île de la forêt",
+        "Montagne de baleine"
+      ],
+      "details": [
+        "Sur un buisson",
+        "En vol",
+        "Sur un rocher",
+        "Sommet d'un sapin",
+        "Sur un arbre",
+        "Sur la plage",
+        "---"
+      ],
+      "types": ["Oiseaux", "Insectes", "Poissons"]
+    }
+  },
+  "species": [
+    {
+      "name": "Sterne",
+      "type": "Oiseaux",
+      "schedules": ["Matin", "Après-midi", "Soir", "Nuit"],
+      "weather": ["Arc-en-ciel"],
+      "location": "Mer de l'Est",
+      "details": "Sur la plage"
+    },
+    {
+      "name": "Grand Duc d'Europe",
+      "type": "Oiseaux",
+      "schedules": ["Matin", "Après-midi", "Soir", "Nuit"],
+      "weather": ["Arc-en-ciel", "Pluie"],
+      "location": "Tour faon",
+      "details": "Sommet d'un sapin"
+    },
+    {
+      "name": "Abeille charpentière bleue",
+      "type": "Insectes",
+      "schedules": ["Soir", "Nuit"],
+      "weather": ["Arc-en-ciel"],
+      "location": "Village de pêcheur",
+      "details": "En vol"
+    },
+    {
+      "name": "Coccinelle asiatique",
+      "type": "Insectes",
+      "schedules": ["Après-midi", "Soir", "Nuit"],
+      "weather": ["Arc-en-ciel", "Pluie"],
+      "location": "Tour Faon",
+      "details": "Sur un buisson"
+    },
+    {
+      "name": "Capricorne des montagnes",
+      "type": "Insectes",
+      "schedules": ["Matin", "Après-midi", "Soir", "Nuit"],
+      "weather": ["Arc-en-ciel"],
+      "location": "Île de la forêt",
+      "details": "Sur un arbre"
+    },
+    {
+      "name": "Cétoine étoilée",
+      "type": "Insectes",
+      "schedules": ["Matin", "Après-midi"],
+      "weather": ["Arc-en-ciel", "Pluie"],
+      "location": "Montagne de baleine",
+      "details": "Sur un arbre"
+    },
+    {
+      "name": "Calliste septicolore",
+      "type": "Oiseaux",
+      "schedules": ["Matin", "Après-midi", "Soir", "Nuit"],
+      "weather": ["Arc-en-ciel"],
+      "location": "Banlieue",
+      "details": "---"
+    }
+  ]
+}
