@@ -1,0 +1,400 @@
+:root {
+  --bg: #f7f8ff;
+  --card: #ffffff;
+  --ink: #27304a;
+  --muted: #616d8a;
+  --primary: #74a8ff;
+  --primary-dark: #5788e2;
+  --accent: #f9af67;
+  --ok: #7bc6a4;
+  --tile-shadow: 0 10px 25px rgba(78, 97, 145, 0.14);
+  --radius: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Nunito', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--ink);
+  background: radial-gradient(circle at 0% 0%, #eaf5ff, transparent 32%),
+    radial-gradient(circle at 95% 5%, #fcecff, transparent 28%), var(--bg);
+  min-height: 100vh;
+}
+
+.page-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1rem 2.5rem;
+}
+
+.hero {
+  background: linear-gradient(145deg, #ffffff, #eff4ff);
+  border-radius: calc(var(--radius) + 8px);
+  padding: 1.4rem;
+  box-shadow: var(--tile-shadow);
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  margin: 0.3rem 0;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+}
+
+.hero p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.hero__badge {
+  display: inline-block;
+  background: #e7f7ef;
+  color: #26734f;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.85rem;
+}
+
+main {
+  display: grid;
+  gap: 1rem;
+}
+
+.panel {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--tile-shadow);
+  padding: 1rem;
+}
+
+.panel__title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.panel h2 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.panel__hint {
+  margin: 0.6rem 0 1rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.filter-group + .filter-group {
+  margin-top: 1rem;
+}
+
+.filter-group h3 {
+  margin: 0 0 0.45rem;
+  font-size: 1rem;
+}
+
+.filter-group--double {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+.chip-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip {
+  border: none;
+  border-radius: 999px;
+  padding: 0.45rem 0.82rem;
+  font-weight: 700;
+  font-family: inherit;
+  background: #eef2ff;
+  color: #475173;
+  cursor: pointer;
+  transition: transform 140ms ease, background-color 140ms ease, color 140ms ease;
+}
+
+.chip:hover {
+  transform: translateY(-2px);
+}
+
+.chip.is-active {
+  box-shadow: inset 0 0 0 2px #2f3f6f, 0 3px 10px rgba(54, 78, 133, 0.22);
+}
+
+.chip[data-kind='types'][data-value='Oiseaux'] {
+  background: linear-gradient(135deg, #ffe3f3, #ffd0e8);
+  color: #8a2b61;
+}
+
+.chip[data-kind='types'][data-value='Insectes'] {
+  background: linear-gradient(135deg, #daf9d9, #bceeb7);
+  color: #245e2e;
+}
+
+.chip[data-kind='types'][data-value='Poissons'] {
+  background: linear-gradient(135deg, #d5ecff, #b6dbff);
+  color: #245288;
+}
+
+.chip[data-kind='weather'][data-value='Arc-en-ciel'] {
+  background: linear-gradient(120deg, #ffd1e8, #ffe6a5, #c8f8b4, #bde5ff, #d7c9ff);
+  color: #4e4470;
+}
+
+.chip[data-kind='weather'][data-value='Pluie'] {
+  background: linear-gradient(140deg, #d4e8ff, #a6c9f4);
+  color: #1f4f86;
+}
+
+.chip[data-kind='weather'][data-value='Soleil'] {
+  background: linear-gradient(130deg, #fff4b7, #ffd86b);
+  color: #775001;
+}
+
+.chip[data-kind='schedules'][data-value='Nuit'] {
+  background: linear-gradient(135deg, #3c4a6d, #2d3140);
+  color: #f1f4ff;
+}
+
+.chip[data-kind='schedules'][data-value='Après-midi'] {
+  background: linear-gradient(135deg, #fff3a5, #c8e8ff);
+  color: #355272;
+}
+
+.chip[data-kind='schedules'][data-value='Soir'] {
+  background: linear-gradient(135deg, #ffcc9b, #ff9f80);
+  color: #6f2e1d;
+}
+
+.chip[data-kind='schedules'][data-value='Matin'] {
+  background: linear-gradient(135deg, #ffe8b6, #fff6d8);
+  color: #7f5a13;
+}
+
+.chip--ghost {
+  background: #f1f4fb;
+}
+
+.search-row {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.search-row label {
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.search-row--compact {
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+}
+
+.search-row--compact label {
+  font-size: 0.82rem;
+}
+
+.search-row--compact input {
+  padding: 0.5rem 0.65rem;
+  font-size: 0.88rem;
+}
+
+.search-row input {
+  border: 2px solid #d9e2fb;
+  border-radius: 12px;
+  padding: 0.62rem 0.75rem;
+  font: inherit;
+}
+
+.search-row input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.count-badge {
+  background: #e6f7ef;
+  color: #207047;
+  border-radius: 999px;
+  padding: 0.35rem 0.72rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.active-filters {
+  margin: 0.7rem 0 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  min-height: 1.8rem;
+}
+
+.results-grid {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+.species-card {
+  background: linear-gradient(180deg, #fff, #f7f9ff);
+  border: 2px solid #ebeffb;
+  border-radius: 16px;
+  padding: 0.75rem;
+}
+
+.species-card__head {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.6rem;
+  align-items: baseline;
+}
+
+.species-card__name {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.species-card__type-tag {
+  background: #edf2ff;
+  color: #47629f;
+  border-radius: 999px;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.species-card[data-type='Oiseaux'] .species-card__type-tag {
+  background: linear-gradient(130deg, #ffe3f3, #ffd0e8);
+  color: #8a2b61;
+}
+
+.species-card[data-type='Insectes'] .species-card__type-tag {
+  background: linear-gradient(130deg, #d8f6d7, #bceeb7);
+  color: #245e2e;
+}
+
+.species-card[data-type='Poissons'] .species-card__type-tag {
+  background: linear-gradient(130deg, #d5ecff, #b6dbff);
+  color: #245288;
+}
+
+.species-card__details {
+  margin: 0.5rem 0 0;
+}
+
+.species-card__details div + div {
+  margin-top: 0.45rem;
+}
+
+.species-card dt {
+  color: #5c6785;
+  font-weight: 700;
+  font-size: 0.83rem;
+}
+
+.species-card dd {
+  margin: 0.1rem 0 0;
+  font-size: 0.92rem;
+}
+
+.badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.mini-badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.mini-badge[data-kind='weather'][data-value='Arc-en-ciel'] {
+  background: linear-gradient(120deg, #ffd1e8, #ffe6a5, #c8f8b4, #bde5ff, #d7c9ff);
+  color: #4e4470;
+}
+
+.mini-badge[data-kind='weather'][data-value='Pluie'] {
+  background: linear-gradient(140deg, #d4e8ff, #a6c9f4);
+  color: #1f4f86;
+}
+
+.mini-badge[data-kind='weather'][data-value='Soleil'] {
+  background: linear-gradient(130deg, #fff4b7, #ffd86b);
+  color: #775001;
+}
+
+.mini-badge[data-kind='schedules'][data-value='Nuit'] {
+  background: linear-gradient(135deg, #3c4a6d, #2d3140);
+  color: #f1f4ff;
+}
+
+.mini-badge[data-kind='schedules'][data-value='Après-midi'] {
+  background: linear-gradient(135deg, #fff3a5, #c8e8ff);
+  color: #355272;
+}
+
+.mini-badge[data-kind='schedules'][data-value='Soir'] {
+  background: linear-gradient(135deg, #ffcc9b, #ff9f80);
+  color: #6f2e1d;
+}
+
+.mini-badge[data-kind='schedules'][data-value='Matin'] {
+  background: linear-gradient(135deg, #ffe8b6, #fff6d8);
+  color: #7f5a13;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  border-radius: 14px;
+  background: #fff6f0;
+  color: #8c4f30;
+  padding: 0.8rem;
+  border: 1px dashed #ffc89e;
+}
+
+.site-footer {
+  margin-top: 1.1rem;
+  background: #ffffffd4;
+  border: 1px solid #e7ecfa;
+  border-radius: 14px;
+  padding: 0.85rem 1rem;
+  color: #4d5675;
+}
+
+.site-footer p {
+  margin: 0;
+  font-size: 0.88rem;
+}
+
+.site-footer p + p {
+  margin-top: 0.35rem;
+}
+
+@media (min-width: 960px) {
+  main {
+    grid-template-columns: 1.1fr 1.6fr;
+    align-items: start;
+  }
+
+  .panel--filters {
+    position: sticky;
+    top: 1rem;
+  }
+
+  .filter-group--double {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
