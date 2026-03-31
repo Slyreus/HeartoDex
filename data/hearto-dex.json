@@ -13,9 +13,14 @@
         "Forêt chêne spirituel",
         "Mer de l'Est",
         "Village de pêcheur",
-        "Tour Faon",
         "Île de la forêt",
-        "Montagne de baleine"
+        "Montagne de baleine",
+        "Source thermale",
+        "Lac de la montagne thermale",
+        "Lac de la forêt",
+        "Champs de fleurs",
+        "Event",
+        "Phare"
       ],
       "details": [
         "Sur un buisson",
@@ -24,6 +29,9 @@
         "Sommet d'un sapin",
         "Sur un arbre",
         "Sur la plage",
+        "Dans le lac",
+        "En bord de lac",
+        "Autour des lacs",
         "---"
       ],
       "types": ["Oiseaux", "Insectes", "Poissons"]
@@ -39,7 +47,7 @@
       "details": "Sur la plage"
     },
     {
-      "name": "Grand Duc d'Europe",
+      "name": "Grand duc d’Europe",
       "type": "Oiseaux",
       "schedules": ["Matin", "Après-midi", "Soir", "Nuit"],
       "weather": ["Arc-en-ciel", "Pluie"],
@@ -59,7 +67,7 @@
       "type": "Insectes",
       "schedules": ["Après-midi", "Soir", "Nuit"],
       "weather": ["Arc-en-ciel", "Pluie"],
-      "location": "Tour Faon",
+      "location": "Tour faon",
       "details": "Sur un buisson"
     },
     {
@@ -84,6 +92,78 @@
       "schedules": ["Matin", "Après-midi", "Soir", "Nuit"],
       "weather": ["Arc-en-ciel"],
       "location": "Banlieue",
+      "details": "---"
+    },
+    {
+      "name": "Faucon pèlerin",
+      "type": "Oiseaux",
+      "schedules": ["Matin", "Après-midi", "Soir", "Nuit"],
+      "weather": ["Arc-en-ciel", "Pluie"],
+      "location": "Source thermale",
+      "details": "---"
+    },
+    {
+      "name": "Canard à tête blanche",
+      "type": "Oiseaux",
+      "schedules": ["Matin", "Après-midi", "Soir", "Nuit"],
+      "weather": ["Arc-en-ciel", "Pluie"],
+      "location": "Lac de la montagne thermale",
+      "details": "Dans le lac"
+    },
+    {
+      "name": "Guêpier d’Europe",
+      "type": "Oiseaux",
+      "schedules": ["Matin", "Après-midi", "Soir", "Nuit"],
+      "weather": ["Arc-en-ciel", "Pluie"],
+      "location": "Lac de la montagne thermale",
+      "details": "En bord de lac"
+    },
+    {
+      "name": "Merlebleu de l’Est",
+      "type": "Oiseaux",
+      "schedules": ["Matin", "Après-midi", "Soir", "Nuit"],
+      "weather": ["Arc-en-ciel", "Pluie"],
+      "location": "Banlieue",
+      "details": "---"
+    },
+    {
+      "name": "Petit flamant",
+      "type": "Oiseaux",
+      "schedules": ["Matin", "Après-midi", "Soir", "Nuit"],
+      "weather": ["Arc-en-ciel", "Pluie"],
+      "location": "Lac de la forêt",
+      "details": "Autour des lacs"
+    },
+    {
+      "name": "Flamant américain",
+      "type": "Oiseaux",
+      "schedules": ["Matin", "Après-midi", "Soir", "Nuit"],
+      "weather": ["Arc-en-ciel"],
+      "location": "Champs de fleurs",
+      "details": "Autour des lacs"
+    },
+    {
+      "name": "Ara Indigo",
+      "type": "Oiseaux",
+      "schedules": ["Matin", "Après-midi", "Soir", "Nuit"],
+      "weather": ["Arc-en-ciel", "Pluie"],
+      "location": "Event",
+      "details": "---"
+    },
+    {
+      "name": "Bouvreuil",
+      "type": "Oiseaux",
+      "schedules": ["Matin", "Après-midi", "Soir", "Nuit"],
+      "weather": ["Arc-en-ciel"],
+      "location": "Phare",
+      "details": "---"
+    },
+    {
+      "name": "Gobemouche vert-de-gris",
+      "type": "Oiseaux",
+      "schedules": ["Matin", "Après-midi", "Soir", "Nuit"],
+      "weather": ["Arc-en-ciel"],
+      "location": "Tremplin",
       "details": "---"
     }
   ]
