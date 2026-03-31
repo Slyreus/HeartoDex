@@ -19,6 +19,7 @@ const refs = {
   activeFilters: document.querySelector('#activeFilters'),
   template: document.querySelector('#species-card-template'),
   searchInput: document.querySelector('#searchInput'),
+  locationSearchInput: document.querySelector('#locationSearchInput'),
   resetFilters: document.querySelector('#resetFilters')
 };
 
@@ -30,6 +31,7 @@ const categoryLabels = {
 };
 
 const normalize = (value) => value.trim().toLowerCase();
+const locationChips = [];
 
 const buildFilterChips = (target, key, values) => {
   const uniqueValues = [...new Set(values)];
@@ -40,6 +42,7 @@ const buildFilterChips = (target, key, values) => {
     chip.type = 'button';
     chip.className = 'chip';
     chip.dataset.value = value;
+    chip.dataset.kind = key;
     chip.textContent = value;
 
     chip.addEventListener('click', () => {
@@ -55,6 +58,17 @@ const buildFilterChips = (target, key, values) => {
     });
 
     target.appendChild(chip);
+    if (key === 'locations') {
+      locationChips.push({ value, chip });
+    }
+  });
+};
+
+const filterLocationChips = (query) => {
+  const normalizedQuery = normalize(query);
+  locationChips.forEach(({ value, chip }) => {
+    const visible = normalize(value).includes(normalizedQuery);
+    chip.style.display = visible ? 'inline-flex' : 'none';
   });
 };
 
@@ -92,19 +106,43 @@ const renderActiveFilters = () => {
   const chips = [];
   Object.entries(state.filters).forEach(([key, value]) => {
     if (value instanceof Set) {
-      value.forEach((entry) => chips.push(`${categoryLabels[key]}: ${entry}`));
+      value.forEach((entry) =>
+        chips.push({
+          label: `${categoryLabels[key]}: ${entry}`,
+          key,
+          value: entry
+        })
+      );
     }
   });
 
   if (state.filters.query.trim()) {
-    chips.push(`Recherche: ${state.filters.query.trim()}`);
+    chips.push({
+      label: `Recherche: ${state.filters.query.trim()}`
+    });
   }
 
   chips.forEach((item) => {
     const chip = document.createElement('span');
     chip.className = 'chip';
-    chip.textContent = item;
+    chip.textContent = item.label;
+    if (item.key && item.value) {
+      chip.dataset.kind = item.key;
+      chip.dataset.value = item.value;
+    }
     refs.activeFilters.appendChild(chip);
+  });
+};
+
+const renderBadgeList = (container, kind, values) => {
+  container.textContent = '';
+  values.forEach((value) => {
+    const badge = document.createElement('span');
+    badge.className = 'mini-badge';
+    badge.dataset.kind = kind;
+    badge.dataset.value = value;
+    badge.textContent = value;
+    container.appendChild(badge);
   });
 };
 
@@ -122,11 +160,13 @@ const renderSpecies = (items) => {
 
   items.forEach((entry) => {
     const clone = refs.template.content.cloneNode(true);
+    const card = clone.querySelector('.species-card');
+    card.dataset.type = entry.type;
     clone.querySelector('.species-card__name').textContent = entry.name;
     clone.querySelector('.species-card__type-tag').textContent = entry.type;
     clone.querySelector('.species-card__location').textContent = entry.location;
-    clone.querySelector('.species-card__weather').textContent = entry.weather.join(', ');
-    clone.querySelector('.species-card__schedule').textContent = entry.schedules.join(', ');
+    renderBadgeList(clone.querySelector('.species-card__weather'), 'weather', entry.weather);
+    renderBadgeList(clone.querySelector('.species-card__schedule'), 'schedules', entry.schedules);
     clone.querySelector('.species-card__details-text').textContent = entry.details;
     refs.results.appendChild(clone);
   });
@@ -146,11 +186,13 @@ const resetFilters = () => {
     }
   });
   state.filters.query = '';
+  filterLocationChips('');
 
   document.querySelectorAll('.chip-grid .chip').forEach((chip) => {
     chip.classList.remove('is-active');
   });
   refs.searchInput.value = '';
+  refs.locationSearchInput.value = '';
   render();
 };
 
@@ -168,6 +210,10 @@ const init = async () => {
   refs.searchInput.addEventListener('input', (event) => {
     state.filters.query = event.target.value;
     render();
+  });
+
+  refs.locationSearchInput.addEventListener('input', (event) => {
+    filterLocationChips(event.target.value);
   });
 
   refs.resetFilters.addEventListener('click', resetFilters);

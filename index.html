@@ -41,11 +41,6 @@
             <div id="filter-types" class="chip-grid"></div>
           </div>
 
-          <div class="filter-group" data-filter="locations">
-            <h3>Localisation</h3>
-            <div id="filter-locations" class="chip-grid"></div>
-          </div>
-
           <div class="filter-group filter-group--double">
             <div>
               <h3>Météo</h3>
@@ -55,6 +50,20 @@
               <h3>Horaire</h3>
               <div id="filter-schedules" class="chip-grid"></div>
             </div>
+          </div>
+
+          <div class="filter-group" data-filter="locations">
+            <h3>Localisation</h3>
+            <div class="search-row search-row--compact">
+              <label for="locationSearchInput">Rechercher une zone</label>
+              <input
+                id="locationSearchInput"
+                type="search"
+                placeholder="Ex: Banlieue, Tour, Forêt..."
+                autocomplete="off"
+              />
+            </div>
+            <div id="filter-locations" class="chip-grid"></div>
           </div>
 
           <div class="search-row">
@@ -79,6 +88,16 @@
           <div id="results" class="results-grid"></div>
         </section>
       </main>
+
+      <footer class="site-footer">
+        <p>
+          Développé par <strong>Slyreus</strong> — UID Heartopia (serveur global) :
+          <strong>3msn0jwk</strong>.
+        </p>
+        <p>
+          Ce site n’a <strong>AUCUN lien officiel</strong> avec Heartopia. Projet 100% fanmade.
+        </p>
+      </footer>
     </div>
 
     <template id="species-card-template">
@@ -94,11 +113,11 @@
           </div>
           <div>
             <dt>☁️ Météo</dt>
-            <dd class="species-card__weather"></dd>
+            <dd class="species-card__weather badge-row"></dd>
           </div>
           <div>
             <dt>🕒 Horaire</dt>
-            <dd class="species-card__schedule"></dd>
+            <dd class="species-card__schedule badge-row"></dd>
           </div>
           <div>
             <dt>💬 Détails</dt>
