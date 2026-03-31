@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HeartoDex</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div class="hero__badge">🌿 Heartopia Companion</div>
+        <h1>HeartoDex</h1>
+        <p>
+          Explore la faune de Heartopia avec des filtres visuels intelligents par type,
+          zone, météo et horaire.
+        </p>
+      </header>
+
+      <main>
+        <section class="panel panel--filters" aria-label="Filtres">
+          <div class="panel__title-row">
+            <h2>Recherche rapide</h2>
+            <button id="resetFilters" class="chip chip--ghost" type="button">
+              Réinitialiser
+            </button>
+          </div>
+          <p class="panel__hint">
+            Sélectionne un ou plusieurs critères. Les <strong>types</strong> sont prioritaires,
+            puis affine par zone, météo ou horaire.
+          </p>
+
+          <div class="filter-group" data-filter="types">
+            <h3>Type</h3>
+            <div id="filter-types" class="chip-grid"></div>
+          </div>
+
+          <div class="filter-group filter-group--double">
+            <div>
+              <h3>Météo</h3>
+              <div id="filter-weather" class="chip-grid"></div>
+            </div>
+            <div>
+              <h3>Horaire</h3>
+              <div id="filter-schedules" class="chip-grid"></div>
+            </div>
+          </div>
+
+          <div class="filter-group" data-filter="locations">
+            <h3>Localisation</h3>
+            <div class="search-row search-row--compact">
+              <label for="locationSearchInput">Rechercher une zone</label>
+              <input
+                id="locationSearchInput"
+                type="search"
+                placeholder="Ex: Banlieue, Tour, Forêt..."
+                autocomplete="off"
+              />
+            </div>
+            <div id="filter-locations" class="chip-grid"></div>
+          </div>
+
+          <div class="search-row">
+            <label for="searchInput">Recherche espèce</label>
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="Ex: Abeille, Sterne, Duc..."
+              autocomplete="off"
+            />
+          </div>
+        </section>
+
+        <section class="panel panel--results" aria-live="polite">
+          <div class="panel__title-row">
+            <h2>Espèces trouvées</h2>
+            <span id="resultsCount" class="count-badge">0 résultat</span>
+          </div>
+
+          <div id="activeFilters" class="active-filters"></div>
+
+          <div id="results" class="results-grid"></div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>
+          Fanmade par <strong>Slyreus</strong> — UID global : <strong>3msn0jwk</strong>.
+        </p>
+        <p>
+          Aucun lien officiel avec Heartopia.
+        </p>
+      </footer>
+    </div>
+
+    <template id="species-card-template">
+      <article class="species-card">
+        <header class="species-card__head">
+          <h3 class="species-card__name"></h3>
+          <span class="species-card__type-tag"></span>
+        </header>
+        <dl class="species-card__details">
+          <div>
+            <dt>📍 Zone</dt>
+            <dd class="species-card__location"></dd>
+          </div>
+          <div>
+            <dt>☁️ Météo</dt>
+            <dd class="species-card__weather badge-row"></dd>
+          </div>
+          <div>
+            <dt>🕒 Horaire</dt>
+            <dd class="species-card__schedule badge-row"></dd>
+          </div>
+          <div>
+            <dt>💬 Détails</dt>
+            <dd class="species-card__details-text"></dd>
+          </div>
+        </dl>
+      </article>
+    </template>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
