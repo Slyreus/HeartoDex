@@ -3,8 +3,17 @@
     "title": "HeartoDex",
     "description": "Indexation de la faune et des entités de Heartopia avec filtres combinables.",
     "categories": {
-      "schedules": ["Matin", "Après-midi", "Soir", "Nuit"],
-      "weather": ["Soleil", "Pluie", "Arc-en-ciel"],
+      "schedules": [
+        "Matin",
+        "Après-midi",
+        "Soir",
+        "Nuit"
+      ],
+      "weather": [
+        "Soleil",
+        "Pluie",
+        "Arc-en-ciel"
+      ],
       "locations": [
         "Banlieue",
         "Tour faon",
@@ -20,7 +29,10 @@
         "Lac de la forêt",
         "Champs de fleurs",
         "Event",
-        "Phare"
+        "Phare",
+        "Plage violette",
+        "Autour des habitations",
+        "Bord de rivière"
       ],
       "details": [
         "Sur un buisson",
@@ -32,155 +44,499 @@
         "Dans le lac",
         "En bord de lac",
         "Autour des lacs",
-        "---"
+        "---",
+        "En vol autour des buissons"
       ],
-      "types": ["Oiseaux", "Insectes", "Poissons"]
+      "types": [
+        "Oiseaux",
+        "Insectes",
+        "Poissons"
+      ]
     }
   },
   "species": [
     {
       "name": "Sterne",
       "type": "Oiseaux",
-      "schedules": ["Matin", "Après-midi", "Soir", "Nuit"],
-      "weather": ["Arc-en-ciel"],
+      "schedules": [
+        "Matin",
+        "Après-midi",
+        "Soir",
+        "Nuit"
+      ],
+      "weather": [
+        "Arc-en-ciel"
+      ],
       "location": "Mer de l'Est",
       "details": "Sur la plage"
     },
     {
       "name": "Grand duc d’Europe",
       "type": "Oiseaux",
-      "schedules": ["Matin", "Après-midi", "Soir", "Nuit"],
-      "weather": ["Arc-en-ciel", "Pluie"],
+      "schedules": [
+        "Matin",
+        "Après-midi",
+        "Soir",
+        "Nuit"
+      ],
+      "weather": [
+        "Arc-en-ciel",
+        "Pluie"
+      ],
       "location": "Tour faon",
       "details": "Sommet d'un sapin"
     },
     {
       "name": "Abeille charpentière bleue",
       "type": "Insectes",
-      "schedules": ["Soir", "Nuit"],
-      "weather": ["Arc-en-ciel"],
+      "schedules": [
+        "Soir",
+        "Nuit"
+      ],
+      "weather": [
+        "Arc-en-ciel"
+      ],
       "location": "Village de pêcheur",
       "details": "En vol"
     },
     {
       "name": "Coccinelle asiatique",
       "type": "Insectes",
-      "schedules": ["Après-midi", "Soir", "Nuit"],
-      "weather": ["Arc-en-ciel", "Pluie"],
+      "schedules": [
+        "Après-midi",
+        "Soir",
+        "Nuit"
+      ],
+      "weather": [
+        "Arc-en-ciel",
+        "Pluie"
+      ],
       "location": "Tour faon",
       "details": "Sur un buisson"
     },
     {
       "name": "Capricorne des montagnes",
       "type": "Insectes",
-      "schedules": ["Matin", "Après-midi", "Soir", "Nuit"],
-      "weather": ["Arc-en-ciel"],
+      "schedules": [
+        "Matin",
+        "Après-midi",
+        "Soir",
+        "Nuit"
+      ],
+      "weather": [
+        "Arc-en-ciel"
+      ],
       "location": "Île de la forêt",
       "details": "Sur un arbre"
     },
     {
       "name": "Cétoine étoilée",
       "type": "Insectes",
-      "schedules": ["Matin", "Après-midi"],
-      "weather": ["Arc-en-ciel", "Pluie"],
+      "schedules": [
+        "Matin",
+        "Après-midi"
+      ],
+      "weather": [
+        "Arc-en-ciel",
+        "Pluie"
+      ],
       "location": "Montagne de baleine",
       "details": "Sur un arbre"
     },
     {
       "name": "Calliste septicolore",
       "type": "Oiseaux",
-      "schedules": ["Matin", "Après-midi", "Soir", "Nuit"],
-      "weather": ["Arc-en-ciel"],
+      "schedules": [
+        "Matin",
+        "Après-midi",
+        "Soir",
+        "Nuit"
+      ],
+      "weather": [
+        "Arc-en-ciel"
+      ],
       "location": "Banlieue",
       "details": "---"
     },
     {
       "name": "Faucon pèlerin",
       "type": "Oiseaux",
-      "schedules": ["Matin", "Après-midi", "Soir", "Nuit"],
-      "weather": ["Arc-en-ciel", "Pluie"],
+      "schedules": [
+        "Matin",
+        "Après-midi",
+        "Soir",
+        "Nuit"
+      ],
+      "weather": [
+        "Arc-en-ciel",
+        "Pluie"
+      ],
       "location": "Source thermale",
       "details": "---"
     },
     {
       "name": "Canard à tête blanche",
       "type": "Oiseaux",
-      "schedules": ["Matin", "Après-midi", "Soir", "Nuit"],
-      "weather": ["Arc-en-ciel", "Pluie"],
+      "schedules": [
+        "Matin",
+        "Après-midi",
+        "Soir",
+        "Nuit"
+      ],
+      "weather": [
+        "Arc-en-ciel",
+        "Pluie"
+      ],
       "location": "Lac de la montagne thermale",
       "details": "Dans le lac"
     },
     {
       "name": "Guêpier d’Europe",
       "type": "Oiseaux",
-      "schedules": ["Matin", "Après-midi", "Soir", "Nuit"],
-      "weather": ["Arc-en-ciel", "Pluie"],
+      "schedules": [
+        "Matin",
+        "Après-midi",
+        "Soir",
+        "Nuit"
+      ],
+      "weather": [
+        "Arc-en-ciel",
+        "Pluie"
+      ],
       "location": "Lac de la montagne thermale",
       "details": "En bord de lac"
     },
     {
       "name": "Merlebleu de l’Est",
       "type": "Oiseaux",
-      "schedules": ["Matin", "Après-midi", "Soir", "Nuit"],
-      "weather": ["Arc-en-ciel", "Pluie"],
+      "schedules": [
+        "Matin",
+        "Après-midi",
+        "Soir",
+        "Nuit"
+      ],
+      "weather": [
+        "Arc-en-ciel",
+        "Pluie"
+      ],
       "location": "Banlieue",
       "details": "---"
     },
     {
       "name": "Petit flamant",
       "type": "Oiseaux",
-      "schedules": ["Matin", "Après-midi", "Soir", "Nuit"],
-      "weather": ["Arc-en-ciel", "Pluie"],
+      "schedules": [
+        "Matin",
+        "Après-midi",
+        "Soir",
+        "Nuit"
+      ],
+      "weather": [
+        "Arc-en-ciel",
+        "Pluie"
+      ],
       "location": "Lac de la forêt",
       "details": "Autour des lacs"
     },
     {
       "name": "Lucía",
       "type": "Oiseaux",
-      "schedules": ["Nuit"],
-      "weather": ["Arc-en-ciel"],
+      "schedules": [
+        "Nuit"
+      ],
+      "weather": [
+        "Arc-en-ciel"
+      ],
       "location": "My Heart",
       "details": "Beautifullest"
     },
     {
       "name": "Flamant rose américain",
       "type": "Oiseaux",
-      "schedules": ["Matin", "Après-midi", "Soir", "Nuit"],
-      "weather": ["Arc-en-ciel"],
+      "schedules": [
+        "Matin",
+        "Après-midi",
+        "Soir",
+        "Nuit"
+      ],
+      "weather": [
+        "Arc-en-ciel"
+      ],
       "location": "Champs de fleurs",
       "details": "Autour des lacs"
     },
     {
       "name": "Ara indigo",
       "type": "Oiseaux",
-      "schedules": ["Matin", "Après-midi", "Soir", "Nuit"],
-      "weather": ["Arc-en-ciel", "Pluie"],
+      "schedules": [
+        "Matin",
+        "Après-midi",
+        "Soir",
+        "Nuit"
+      ],
+      "weather": [
+        "Arc-en-ciel",
+        "Pluie"
+      ],
       "location": "Event",
       "details": "---"
     },
     {
       "name": "Paon vert",
       "type": "Oiseaux",
-      "schedules": ["Matin", "Après-midi", "Soir", "Nuit"],
-      "weather": ["Arc-en-ciel", "Pluie", "Soleil"],
+      "schedules": [
+        "Matin",
+        "Après-midi",
+        "Soir",
+        "Nuit"
+      ],
+      "weather": [
+        "Arc-en-ciel",
+        "Pluie",
+        "Soleil"
+      ],
       "location": "Event",
       "details": "Uniquement à la phase bonus"
     },
     {
       "name": "Bouvreuil",
       "type": "Oiseaux",
-      "schedules": ["Matin", "Après-midi", "Soir", "Nuit"],
-      "weather": ["Arc-en-ciel"],
+      "schedules": [
+        "Matin",
+        "Après-midi",
+        "Soir",
+        "Nuit"
+      ],
+      "weather": [
+        "Arc-en-ciel"
+      ],
       "location": "Phare",
       "details": "---"
     },
     {
       "name": "Gobemouche vert-de-gris",
       "type": "Oiseaux",
-      "schedules": ["Matin", "Après-midi", "Soir", "Nuit"],
-      "weather": ["Arc-en-ciel"],
+      "schedules": [
+        "Matin",
+        "Après-midi",
+        "Soir",
+        "Nuit"
+      ],
+      "weather": [
+        "Arc-en-ciel"
+      ],
       "location": "Tremplin",
       "details": "---"
+    },
+    {
+      "name": "Libellule rose",
+      "type": "Insectes",
+      "schedules": [
+        "Après-midi",
+        "Soir",
+        "Nuit"
+      ],
+      "weather": [
+        "Arc-en-ciel"
+      ],
+      "location": "Lac de la montagne thermale",
+      "details": "En vol autour des buissons"
+    },
+    {
+      "name": "Papillon bleue céleste",
+      "type": "Insectes",
+      "schedules": [
+        "Matin",
+        "Après-midi"
+      ],
+      "weather": [
+        "Arc-en-ciel"
+      ],
+      "location": "Plage violette",
+      "details": "En vol"
+    },
+    {
+      "name": "Papillon de soleil",
+      "type": "Insectes",
+      "schedules": [
+        "Matin",
+        "Après-midi"
+      ],
+      "weather": [
+        "Arc-en-ciel"
+      ],
+      "location": "Tour faon",
+      "details": "En vol"
+    },
+    {
+      "name": "Lucanus doré",
+      "type": "Insectes",
+      "schedules": [
+        "Soir",
+        "Nuit"
+      ],
+      "weather": [
+        "Arc-en-ciel",
+        "Pluie"
+      ],
+      "location": "Forêt chêne spirituel",
+      "details": "Sur un arbre"
+    },
+    {
+      "name": "Mélitée léopard",
+      "type": "Insectes",
+      "schedules": [
+        "Soir",
+        "Nuit",
+        "Matin"
+      ],
+      "weather": [
+        "Arc-en-ciel",
+        "Pluie"
+      ],
+      "location": "Village de pêcheur",
+      "details": "En vol"
+    },
+    {
+      "name": "Lucanus",
+      "type": "Insectes",
+      "schedules": [
+        "Matin",
+        "Après-midi",
+        "Soir"
+      ],
+      "weather": [
+        "Arc-en-ciel",
+        "Pluie"
+      ],
+      "location": "Tremplin",
+      "details": "Sur un arbre"
+    },
+    {
+      "name": "Mante à tête conique",
+      "type": "Insectes",
+      "schedules": [
+        "Après-midi",
+        "Soir"
+      ],
+      "weather": [
+        "Arc-en-ciel",
+        "Pluie"
+      ],
+      "location": "Ruines",
+      "details": "Sur un buisson"
+    },
+    {
+      "name": "Agrion de Virginie",
+      "type": "Insectes",
+      "schedules": [
+        "Matin",
+        "Après-midi",
+        "Soir",
+        "Nuit"
+      ],
+      "weather": [
+        "Arc-en-ciel",
+        "Pluie"
+      ],
+      "location": "Lac de la forêt",
+      "details": "En vol autour des buissons"
+    },
+    {
+      "name": "Cétoine étoilée bleue",
+      "type": "Insectes",
+      "schedules": [
+        "Matin",
+        "Après-midi",
+        "Soir",
+        "Nuit"
+      ],
+      "weather": [
+        "Arc-en-ciel",
+        "Pluie"
+      ],
+      "location": "Autour des habitations",
+      "details": "Sur un rocher"
+    },
+    {
+      "name": "Coccinelle à 4 étoiles",
+      "type": "Insectes",
+      "schedules": [
+        "Matin",
+        "Après-midi",
+        "Soir",
+        "Nuit"
+      ],
+      "weather": [
+        "Arc-en-ciel",
+        "Pluie"
+      ],
+      "location": "Lac de la montagne thermale",
+      "details": "Sur un buisson"
+    },
+    {
+      "name": "Coccinelle à 7 points",
+      "type": "Insectes",
+      "schedules": [
+        "Matin",
+        "Après-midi",
+        "Soir",
+        "Nuit"
+      ],
+      "weather": [
+        "Arc-en-ciel",
+        "Pluie"
+      ],
+      "location": "Banlieue",
+      "details": "Sur un buisson"
+    },
+    {
+      "name": "Grand paon de nuit",
+      "type": "Insectes",
+      "schedules": [
+        "Matin",
+        "Après-midi",
+        "Soir",
+        "Nuit"
+      ],
+      "weather": [
+        "Arc-en-ciel",
+        "Pluie"
+      ],
+      "location": "Event",
+      "details": "En vol"
+    },
+    {
+      "name": "Libellule à queue blanche",
+      "type": "Insectes",
+      "schedules": [
+        "Matin",
+        "Après-midi",
+        "Soir",
+        "Nuit"
+      ],
+      "weather": [
+        "Arc-en-ciel",
+        "Pluie"
+      ],
+      "location": "Bord de rivière",
+      "details": "En vol autour des buissons"
+    },
+    {
+      "name": "Libellule tachetée",
+      "type": "Insectes",
+      "schedules": [
+        "Matin",
+        "Après-midi",
+        "Soir",
+        "Nuit"
+      ],
+      "weather": [
+        "Arc-en-ciel",
+        "Pluie"
+      ],
+      "location": "Banlieue",
+      "details": "En vol autour des buissons"
     }
   ]
 }
