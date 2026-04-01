@@ -159,6 +159,14 @@
       "details": "---"
     },
     {
+      "name": "Paon Vert",
+      "type": "Oiseaux",
+      "schedules": ["Matin", "Après-midi", "Soir", "Nuit"],
+      "weather": ["Arc-en-ciel", "Pluie", "Soleil"],
+      "location": "Event",
+      "details": "Uniquement à la phase bonus"
+    },
+    {
       "name": "Bouvreuil",
       "type": "Oiseaux",
       "schedules": ["Matin", "Après-midi", "Soir", "Nuit"],
