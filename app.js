@@ -77,6 +77,17 @@ const buildFilterChips = (target, key, values) => {
 
     chip.addEventListener('click', () => {
       const bucket = state.filters[key];
+      if (key === 'weather') {
+        const isAlreadyActive = bucket.has(value);
+        bucket.clear();
+        target.querySelectorAll('.chip').forEach((item) => item.classList.remove('is-active'));
+        if (!isAlreadyActive) {
+          bucket.add(value);
+          chip.classList.add('is-active');
+        }
+        render();
+        return;
+      }
       if (bucket.has(value)) {
         bucket.delete(value);
         chip.classList.remove('is-active');
@@ -108,6 +119,18 @@ const matchesSetFilter = (selectedValues, candidateValues) => {
   return [...selectedValues].every((selected) => candidateValues.includes(selected));
 };
 
+const weatherCombinationFromChip = (weatherChipValue) => {
+  if (weatherChipValue === 'Arc-en-ciel') return ['Arc-en-ciel'];
+  if (weatherChipValue === 'Pluie') return ['Arc-en-ciel', 'Pluie'];
+  if (weatherChipValue === 'Soleil') return ['Arc-en-ciel', 'Pluie', 'Soleil'];
+  return null;
+};
+
+const hasExactValues = (left, right) => {
+  if (left.length !== right.length) return false;
+  return left.every((value, index) => value === right[index]);
+};
+
 const filterSpecies = () => {
   const query = normalize(state.filters.query);
 
@@ -118,7 +141,13 @@ const filterSpecies = () => {
     const locationOk =
       state.filters.locations.size === 0 || state.filters.locations.has(entry.location);
 
-    const weatherOk = matchesSetFilter(state.filters.weather, entry.weather);
+    const selectedWeather = [...state.filters.weather][0];
+    const targetWeatherCombination = selectedWeather
+      ? weatherCombinationFromChip(selectedWeather)
+      : null;
+    const weatherOk = targetWeatherCombination
+      ? hasExactValues(entry.weather, targetWeatherCombination)
+      : true;
     const scheduleOk = matchesSetFilter(state.filters.schedules, entry.schedules);
 
     const searchOk =
@@ -196,6 +225,26 @@ const renderSpecies = (items) => {
     const card = clone.querySelector('.species-card');
     card.dataset.type = entry.type;
     applySemanticTone(card, 'types', entry.type);
+    const imageWrap = clone.querySelector('.species-card__illustration-wrap');
+    const image = clone.querySelector('.species-card__illustration');
+    const imageFileName = `${entry.name.replaceAll(' ', '_')}.png`;
+    image.src = `./data/${encodeURIComponent(imageFileName)}`;
+    image.alt = `Illustration de ${entry.name}`;
+    image.addEventListener(
+      'load',
+      () => {
+        imageWrap.hidden = false;
+      },
+      { once: true }
+    );
+    image.addEventListener(
+      'error',
+      () => {
+        imageWrap.hidden = true;
+      },
+      { once: true }
+    );
+
     clone.querySelector('.species-card__name').textContent = entry.name;
     clone.querySelector('.species-card__type-tag').textContent = entry.type;
     clone.querySelector('.species-card__location').textContent = entry.location;
