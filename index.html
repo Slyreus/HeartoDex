@@ -32,9 +32,19 @@
             </button>
           </div>
           <p class="panel__hint">
-            Sélectionne un ou plusieurs critères. Les <strong>types</strong> sont prioritaires,
-            puis affine par zone, météo ou horaire.
+            Commence par la <strong>recherche espèce</strong> (facultative), puis affine avec
+            les filtres par type, zone, météo ou horaire.
           </p>
+
+          <div class="search-row search-row--priority">
+            <label for="searchInput">Recherche espèce <span>(facultatif)</span></label>
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="Ex: Abeille, Sterne, Duc..."
+              autocomplete="off"
+            />
+          </div>
 
           <div class="filter-group" data-filter="types">
             <h3>Type</h3>
@@ -64,16 +74,6 @@
               />
             </div>
             <div id="filter-locations" class="chip-grid"></div>
-          </div>
-
-          <div class="search-row">
-            <label for="searchInput">Recherche espèce</label>
-            <input
-              id="searchInput"
-              type="search"
-              placeholder="Ex: Abeille, Sterne, Duc..."
-              autocomplete="off"
-            />
           </div>
         </section>
 
