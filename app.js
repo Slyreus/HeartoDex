@@ -289,6 +289,7 @@ const resetFilters = () => {
 const setRareBirdMapOpen = (isOpen) => {
   refs.rareBirdMapPanel.hidden = !isOpen;
   refs.rareBirdMapToggle.setAttribute('aria-expanded', String(isOpen));
+  document.body.style.overflow = isOpen ? 'hidden' : '';
 };
 
 const init = async () => {
@@ -318,6 +319,16 @@ const init = async () => {
   });
   refs.rareBirdMapClose.addEventListener('click', () => {
     setRareBirdMapOpen(false);
+  });
+  refs.rareBirdMapPanel.addEventListener('click', (event) => {
+    if (event.target === refs.rareBirdMapPanel) {
+      setRareBirdMapOpen(false);
+    }
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !refs.rareBirdMapPanel.hidden) {
+      setRareBirdMapOpen(false);
+    }
   });
 
   render();

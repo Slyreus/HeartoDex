@@ -38,21 +38,23 @@
             zone, météo et horaire.
           </p>
         </div>
-        <div id="rareBirdMapPanel" class="rare-map" hidden>
-          <button
-            id="rareBirdMapClose"
-            class="rare-map__close"
-            type="button"
-            aria-label="Fermer la carte des oiseaux rares"
-          >
-            ✕
-          </button>
-          <img
-            class="rare-map__image"
-            src="./data/Oiseaux-Arc-en-Ciel.png"
-            alt="Carte des oiseaux rares de Heartopia"
-            loading="lazy"
-          />
+        <div id="rareBirdMapPanel" class="rare-map-overlay" hidden>
+          <div class="rare-map" role="dialog" aria-modal="true" aria-label="Carte des oiseaux rares">
+            <button
+              id="rareBirdMapClose"
+              class="rare-map__close"
+              type="button"
+              aria-label="Fermer la carte des oiseaux rares"
+            >
+              ✕
+            </button>
+            <img
+              class="rare-map__image"
+              src="./data/Oiseaux-Arc-en-Ciel.png"
+              alt="Carte des oiseaux rares de Heartopia"
+              loading="lazy"
+            />
+          </div>
         </div>
       </header>
 
