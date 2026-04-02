@@ -135,13 +135,15 @@ body {
 }
 
 .rare-map {
-  width: min(1040px, 94vw);
+  width: fit-content;
+  max-width: 94vw;
   max-height: 90vh;
   border-radius: 22px;
   border: 1px solid #d5c4ae;
   box-shadow: 0 14px 35px rgba(30, 36, 56, 0.35);
   overflow: hidden;
   position: relative;
+  line-height: 0;
 }
 
 .rare-map__close {
@@ -160,8 +162,9 @@ body {
 }
 
 .rare-map__image {
-  width: 100%;
+  width: auto;
   display: block;
+  max-width: 94vw;
   max-height: 88vh;
   object-fit: contain;
 }
