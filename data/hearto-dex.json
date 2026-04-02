@@ -116,6 +116,20 @@
       "details": "Sur un buisson"
     },
     {
+      "name": "Scarabée doré aux gemmes",
+      "type": "Insectes",
+      "schedules": [
+        "Après-midi",
+        "Soir"
+      ],
+      "weather": [
+        "Arc-en-ciel",
+        "Soleil"
+      ],
+      "location": "Tremplin",
+      "details": "---"
+    },
+    {
       "name": "Capricorne des montagnes",
       "type": "Insectes",
       "schedules": [
