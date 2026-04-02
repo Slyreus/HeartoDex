@@ -17,6 +17,7 @@
       "locations": [
         "Banlieue",
         "Tour faon",
+        "Moulin à vent",
         "Tremplin",
         "Ruines",
         "Forêt chêne spirituel",
@@ -173,6 +174,20 @@
       ],
       "location": "Source thermale",
       "details": "---"
+    },
+    {
+      "name": "Hypolimnas vert",
+      "type": "Insectes",
+      "schedules": [
+        "Matin",
+        "Nuit"
+      ],
+      "weather": [
+        "Arc-en-ciel",
+        "Pluie"
+      ],
+      "location": "Moulin à vent",
+      "details": "En vol"
     },
     {
       "name": "Canard à tête blanche",
