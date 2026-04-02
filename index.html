@@ -34,29 +34,8 @@
             </button>
           </div>
           <p class="panel__hint">
-            Choisis ton mode : soit une <strong>recherche directe</strong> si tu connais
-            déjà l'espèce, soit une <strong>exploration par filtres</strong> pour découvrir
-            plus largement.
+            Recherche une espèce par son nom (ou un mot-clé), puis affine avec les filtres.
           </p>
-
-          <div class="search-mode-switch" role="group" aria-label="Mode de recherche">
-            <button
-              id="modeDirect"
-              class="chip chip--mode is-active"
-              type="button"
-              data-mode="direct"
-            >
-              🎯 Je connais l'espèce
-            </button>
-            <button
-              id="modeFilters"
-              class="chip chip--mode"
-              type="button"
-              data-mode="filters"
-            >
-              🧭 Je veux explorer
-            </button>
-          </div>
 
           <div class="search-row search-row--priority">
             <label for="searchInput">Recherche espèce <span>(facultatif)</span></label>
@@ -67,6 +46,8 @@
               autocomplete="off"
             />
           </div>
+
+          <div class="filters-separator" aria-hidden="true"></div>
 
           <div class="filter-group" data-filter="types">
             <h3>Type</h3>

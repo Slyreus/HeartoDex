@@ -6,8 +6,7 @@ const state = {
     weather: new Set(),
     schedules: new Set(),
     query: ''
-  },
-  searchMode: 'direct'
+  }
 };
 
 const refs = {
@@ -21,10 +20,7 @@ const refs = {
   template: document.querySelector('#species-card-template'),
   searchInput: document.querySelector('#searchInput'),
   locationSearchInput: document.querySelector('#locationSearchInput'),
-  resetFilters: document.querySelector('#resetFilters'),
-  modeDirect: document.querySelector('#modeDirect'),
-  modeFilters: document.querySelector('#modeFilters'),
-  searchRow: document.querySelector('.search-row--priority')
+  resetFilters: document.querySelector('#resetFilters')
 };
 
 const categoryLabels = {
@@ -135,20 +131,6 @@ const hasExactValues = (left, right) => {
   return left.every((value, index) => value === right[index]);
 };
 
-const setSearchMode = (mode) => {
-  state.searchMode = mode;
-  const isDirect = mode === 'direct';
-  refs.modeDirect.classList.toggle('is-active', isDirect);
-  refs.modeFilters.classList.toggle('is-active', !isDirect);
-  refs.searchRow.classList.toggle('search-row--muted', !isDirect);
-  refs.searchInput.disabled = !isDirect;
-  if (!isDirect) {
-    state.filters.query = '';
-    refs.searchInput.value = '';
-  }
-  render();
-};
-
 const filterSpecies = () => {
   const query = normalize(state.filters.query);
 
@@ -169,7 +151,6 @@ const filterSpecies = () => {
     const scheduleOk = matchesSetFilter(state.filters.schedules, entry.schedules);
 
     const searchOk =
-      state.searchMode !== 'direct' ||
       query.length === 0 ||
       normalize(entry.name).includes(query) ||
       normalize(entry.details).includes(query) ||
@@ -200,13 +181,6 @@ const renderActiveFilters = () => {
       label: `Recherche: ${state.filters.query.trim()}`
     });
   }
-
-  chips.push({
-    label:
-      state.searchMode === 'direct'
-        ? 'Mode: Recherche directe'
-        : 'Mode: Exploration par filtres'
-  });
 
   chips.forEach((item) => {
     const chip = document.createElement('span');
@@ -254,22 +228,26 @@ const renderSpecies = (items) => {
     const imageWrap = clone.querySelector('.species-card__illustration-wrap');
     const image = clone.querySelector('.species-card__illustration');
     const imageFileName = `${entry.name.replaceAll(' ', '_')}.png`;
-    image.src = `./data/${encodeURIComponent(imageFileName)}`;
-    image.alt = `Illustration de ${entry.name}`;
-    image.addEventListener(
+    const imageSrc = `./data/${encodeURIComponent(imageFileName)}`;
+    const preloadImage = new Image();
+    preloadImage.addEventListener(
       'load',
       () => {
+        image.src = imageSrc;
+        image.alt = `Illustration de ${entry.name}`;
         imageWrap.hidden = false;
       },
       { once: true }
     );
-    image.addEventListener(
+    preloadImage.addEventListener(
       'error',
       () => {
-        imageWrap.hidden = true;
+        image.remove();
+        imageWrap.remove();
       },
       { once: true }
     );
+    preloadImage.src = imageSrc;
 
     clone.querySelector('.species-card__name').textContent = entry.name;
     clone.querySelector('.species-card__type-tag').textContent = entry.type;
@@ -302,7 +280,7 @@ const resetFilters = () => {
   });
   refs.searchInput.value = '';
   refs.locationSearchInput.value = '';
-  setSearchMode('direct');
+  render();
 };
 
 const init = async () => {
@@ -326,8 +304,6 @@ const init = async () => {
   });
 
   refs.resetFilters.addEventListener('click', resetFilters);
-  refs.modeDirect.addEventListener('click', () => setSearchMode('direct'));
-  refs.modeFilters.addEventListener('click', () => setSearchMode('filters'));
 
   render();
 };

@@ -197,18 +197,6 @@ main {
   background: #e9dcc8;
 }
 
-.chip--mode {
-  background: #e9eefc;
-  color: #445c96;
-}
-
-.search-mode-switch {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  margin-bottom: 0.75rem;
-}
-
 .search-row {
   margin-top: 1rem;
   display: grid;
@@ -229,15 +217,16 @@ main {
   padding: 0.65rem;
 }
 
-.search-row--muted {
-  opacity: 0.55;
-  pointer-events: none;
-}
-
 .search-row--priority label span {
   font-size: 0.82rem;
   font-weight: 600;
   color: var(--muted);
+}
+
+.filters-separator {
+  margin: 0.9rem 0 0.35rem;
+  border-top: 1px solid #dbcdb6;
+  opacity: 0.75;
 }
 
 .search-row--compact {
