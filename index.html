@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HeartoDex</title>
+    <title>Faunopia</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,8 +15,10 @@
   <body>
     <div class="page-shell">
       <header class="hero">
-        <div class="hero__badge">🌿 Heartopia Companion</div>
-        <h1>HeartoDex</h1>
+        <div class="hero__title-row">
+          <h1>Faunopia</h1>
+          <div class="hero__badge">🌿 Heartopia Companion</div>
+        </div>
         <p>
           Explore la faune de Heartopia avec des filtres visuels intelligents par type,
           zone, météo et horaire.
@@ -32,9 +34,29 @@
             </button>
           </div>
           <p class="panel__hint">
-            Commence par la <strong>recherche espèce</strong> (facultative), puis affine avec
-            les filtres par type, zone, météo ou horaire.
+            Choisis ton mode : soit une <strong>recherche directe</strong> si tu connais
+            déjà l'espèce, soit une <strong>exploration par filtres</strong> pour découvrir
+            plus largement.
           </p>
+
+          <div class="search-mode-switch" role="group" aria-label="Mode de recherche">
+            <button
+              id="modeDirect"
+              class="chip chip--mode is-active"
+              type="button"
+              data-mode="direct"
+            >
+              🎯 Je connais l'espèce
+            </button>
+            <button
+              id="modeFilters"
+              class="chip chip--mode"
+              type="button"
+              data-mode="filters"
+            >
+              🧭 Je veux explorer
+            </button>
+          </div>
 
           <div class="search-row search-row--priority">
             <label for="searchInput">Recherche espèce <span>(facultatif)</span></label>
