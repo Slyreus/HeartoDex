@@ -130,13 +130,16 @@ body {
   backdrop-filter: blur(2px);
 }
 
+.rare-map-overlay[hidden] {
+  display: none;
+}
+
 .rare-map {
-  width: min(960px, 94vw);
-  max-height: 90vh;
-  border-radius: 20px;
-  border: 1px solid #dbcbb6;
-  background: linear-gradient(160deg, #fff8ed, #f6ebd9);
-  box-shadow: inset 0 0 0 1px #f6ead8, 0 14px 35px rgba(30, 36, 56, 0.35);
+  width: min(1040px, 94vw);
+  height: min(72vh, 640px);
+  border-radius: 22px;
+  border: 1px solid #d5c4ae;
+  box-shadow: 0 14px 35px rgba(30, 36, 56, 0.35);
   overflow: hidden;
   position: relative;
 }
@@ -158,10 +161,9 @@ body {
 
 .rare-map__image {
   width: 100%;
+  height: 100%;
   display: block;
-  max-height: 90vh;
-  object-fit: contain;
-  background: #fcf3e6;
+  object-fit: cover;
 }
 
 @media (max-width: 700px) {
