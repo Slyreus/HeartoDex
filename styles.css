@@ -1,14 +1,14 @@
 :root {
-  --bg: #0d1224;
-  --card: #141c33;
-  --card-soft: #1b2644;
-  --ink: #e8edff;
-  --muted: #aab6d9;
-  --primary: #7ca9ff;
-  --primary-dark: #5d84f2;
-  --accent: #ffb86d;
-  --ok: #84d9ad;
-  --tile-shadow: 0 20px 40px rgba(3, 7, 20, 0.55);
+  --bg: #efe6d8;
+  --card: #fff7ec;
+  --card-soft: #f4ead9;
+  --ink: #363f59;
+  --muted: #6a728d;
+  --primary: #6f9ef6;
+  --primary-dark: #4f79d8;
+  --accent: #f0a961;
+  --ok: #73bf9d;
+  --tile-shadow: 0 14px 28px rgba(97, 82, 63, 0.2);
   --radius: 18px;
 }
 
@@ -21,10 +21,10 @@ body {
   font-family: 'Nunito', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   color: var(--ink);
   background:
-    radial-gradient(circle at 8% 10%, rgba(91, 123, 255, 0.28), transparent 32%),
-    radial-gradient(circle at 90% 12%, rgba(17, 204, 191, 0.2), transparent 28%),
-    radial-gradient(circle at 72% 88%, rgba(255, 134, 89, 0.2), transparent 26%),
-    linear-gradient(165deg, #070b17 0%, #0d1224 48%, #121932 100%);
+    radial-gradient(circle at 12% 8%, rgba(131, 173, 243, 0.3), transparent 32%),
+    radial-gradient(circle at 88% 12%, rgba(186, 223, 255, 0.28), transparent 28%),
+    radial-gradient(circle at 66% 90%, rgba(255, 225, 186, 0.34), transparent 30%),
+    linear-gradient(180deg, #efe6d8 0%, #e4d8c6 58%, #d8cab2 100%);
   min-height: 100vh;
 }
 
@@ -35,8 +35,8 @@ body {
 }
 
 .hero {
-  background: linear-gradient(145deg, rgba(29, 40, 74, 0.96), rgba(21, 31, 57, 0.96) 52%, rgba(28, 37, 70, 0.96));
-  border: 1px solid #2b3a64;
+  background: linear-gradient(145deg, #fffdf8, #fdf2e2 52%, #edf3ff);
+  border: 1px solid #e4d5bd;
   border-radius: calc(var(--radius) + 8px);
   padding: 1.4rem;
   box-shadow: var(--tile-shadow);
@@ -55,8 +55,8 @@ body {
 
 .hero__badge {
   display: inline-block;
-  background: #1f3d38;
-  color: #9be8c3;
+  background: #e9f4e8;
+  color: #2f7a56;
   font-weight: 700;
   border-radius: 999px;
   padding: 0.35rem 0.8rem;
@@ -69,8 +69,8 @@ main {
 }
 
 .panel {
-  background: linear-gradient(165deg, var(--card), var(--card-soft));
-  border: 1px solid #2c3d67;
+  background: linear-gradient(168deg, var(--card), var(--card-soft));
+  border: 1px solid #e1d2bc;
   border-radius: var(--radius);
   box-shadow: var(--tile-shadow);
   padding: 1rem;
@@ -122,8 +122,8 @@ main {
   padding: 0.45rem 0.82rem;
   font-weight: 700;
   font-family: inherit;
-  background: #27395f;
-  color: #e8edff;
+  background: #efe4d2;
+  color: #4c5676;
   cursor: pointer;
   transition: transform 140ms ease, background-color 140ms ease, color 140ms ease;
 }
@@ -133,7 +133,7 @@ main {
 }
 
 .chip.is-active {
-  box-shadow: inset 0 0 0 2px #aac6ff, 0 6px 14px rgba(38, 57, 104, 0.46);
+  box-shadow: inset 0 0 0 2px #2f3f6f, 0 4px 12px rgba(57, 77, 126, 0.28);
 }
 
 .chip.tone-type-bird {
@@ -187,7 +187,7 @@ main {
 }
 
 .chip--ghost {
-  background: #253556;
+  background: #e9dcc8;
 }
 
 .search-row {
@@ -204,8 +204,8 @@ main {
 
 .search-row--priority {
   margin-top: 0.4rem;
-  background: rgba(36, 54, 93, 0.82);
-  border: 1px solid #4562a0;
+  background: linear-gradient(160deg, #f5e9d8, #f0e2cc);
+  border: 1px solid #d9c7a8;
   border-radius: 14px;
   padding: 0.65rem;
 }
@@ -224,7 +224,7 @@ main {
 
 .search-row--compact label {
   font-size: 0.72rem;
-  color: #b8c2e3;
+  color: #6e7692;
   font-weight: 600;
 }
 
@@ -232,17 +232,17 @@ main {
   padding: 0.36rem 0.56rem;
   font-size: 0.8rem;
   border-width: 1px;
-  border-color: #455c93;
-  background: #1c2848;
+  border-color: #d2d9ed;
+  background: #f8fbff;
 }
 
 .search-row input {
-  border: 2px solid #41598d;
+  border: 2px solid #cdd7f1;
   border-radius: 12px;
   padding: 0.62rem 0.75rem;
   font: inherit;
-  background: #1a2645;
-  color: #ecf1ff;
+  background: #f9fbff;
+  color: #374261;
 }
 
 
@@ -252,8 +252,8 @@ main {
 }
 
 .count-badge {
-  background: #26473b;
-  color: #c1f3d7;
+  background: #d8ead8;
+  color: #2a5f45;
   border-radius: 999px;
   padding: 0.35rem 0.72rem;
   font-weight: 700;
@@ -275,8 +275,8 @@ main {
 }
 
 .species-card {
-  background: linear-gradient(170deg, #1b2747, #16203c 56%, #202f54);
-  border: 1px solid #30436f;
+  background: linear-gradient(175deg, #fffdf8, #fff5e7 56%, #edf3ff);
+  border: 1px solid #e2d3bc;
   border-radius: 16px;
   padding: 0.75rem;
   box-shadow: 0 6px 16px rgba(124, 102, 77, 0.09);
@@ -297,8 +297,8 @@ main {
 }
 
 .species-card__type-tag {
-  background: #263d71;
-  color: #d9e4ff;
+  background: #e8eefc;
+  color: #48619b;
   border-radius: 999px;
   padding: 0.2rem 0.6rem;
   font-size: 0.8rem;
@@ -325,9 +325,9 @@ main {
   height: 48px;
   border-radius: 12px;
   padding: 4px;
-  background: #10192f;
-  border: 1px solid #32466f;
-  box-shadow: inset 0 0 0 1px #2a3d64;
+  background: #fffdf9;
+  border: 1px solid #e6d8c4;
+  box-shadow: inset 0 0 0 1px #f3e8d8;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -349,7 +349,7 @@ main {
 }
 
 .species-card dt {
-  color: #a9b7dc;
+  color: #5a6788;
   font-weight: 700;
   font-size: 0.83rem;
 }
@@ -413,19 +413,19 @@ main {
 .empty-state {
   grid-column: 1 / -1;
   border-radius: 14px;
-  background: #3f2a27;
-  color: #ffd0b2;
+  background: #fff1e3;
+  color: #88583c;
   padding: 0.8rem;
-  border: 1px dashed #a3694a;
+  border: 1px dashed #e0b48f;
 }
 
 .site-footer {
   margin-top: 0.85rem;
-  background: rgba(16, 24, 46, 0.88);
-  border: 1px solid #2f426a;
+  background: rgba(255, 247, 235, 0.82);
+  border: 1px solid #e2d4c0;
   border-radius: 12px;
   padding: 0.55rem 0.75rem;
-  color: #9eabd0;
+  color: #687189;
 }
 
 .site-footer p {
