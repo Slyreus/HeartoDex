@@ -136,7 +136,7 @@ body {
 
 .rare-map {
   width: min(1040px, 94vw);
-  height: min(72vh, 640px);
+  max-height: 90vh;
   border-radius: 22px;
   border: 1px solid #d5c4ae;
   box-shadow: 0 14px 35px rgba(30, 36, 56, 0.35);
@@ -161,9 +161,9 @@ body {
 
 .rare-map__image {
   width: 100%;
-  height: 100%;
   display: block;
-  object-fit: cover;
+  max-height: 88vh;
+  object-fit: contain;
 }
 
 @media (max-width: 700px) {
